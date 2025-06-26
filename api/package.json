@@ -1,6 +1,7 @@
 {
-  "name": "judge0-api-clone",
+  "name": "selfhosted-judge0",
   "version": "1.0.0",
+  "description": "Simple self-hosted Judge0 API",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -10,3 +11,4 @@
     "body-parser": "^1.20.2"
   }
 }
+
