@@ -1,7 +1,15 @@
-console.log("Worker started");
+require('dotenv').config();
 
-// Worker code to poll submissions and process them would go here
+const axios = require('axios');
+const apiUrl = process.env.API_URL || "http://localhost:3000";
 
-setInterval(() => {
-  console.log("Worker running...");
-}, 5000);
+console.log("Worker started...");
+
+setInterval(async () => {
+  try {
+    const res = await axios.get(`${apiUrl}/languages`);
+    console.log("Available languages:", res.data);
+  } catch (err) {
+    console.error("Worker error:", err.message);
+  }
+}, 10000); // every 10 seconds
