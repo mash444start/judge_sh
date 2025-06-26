@@ -1,3 +1,6 @@
 #!/bin/sh
-node index.js
 
+node index.js &     
+node worker.js &     
+
+wait                
